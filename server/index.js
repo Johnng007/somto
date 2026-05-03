@@ -14,6 +14,6 @@ app.use('/questions',questionRouters);
 app.use('/results',resultRouters);
 mongoose.set("strictQuery",false);
 const PORT= process.env.PORT || 5000;
-mongoose.connect(process.env.CONNECTION_URL)
+mongoose.connect(process.env.MONGO_URI)
     .then(()=>app.listen(PORT,()=>console.log('Server running on :'+ PORT)))
     .catch((error)=> console.log(error.message));
